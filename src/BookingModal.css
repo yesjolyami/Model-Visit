@@ -1,0 +1,208 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(15px); /* Глубокий премиальный блюр */
+  -webkit-backdrop-filter: blur(15px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: modalFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px; /* Менее круглые углы выглядят строже */
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+  padding: 50px 40px;
+  transform: translateY(0);
+  animation: modalSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 30px;
+
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 26px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  z-index: 10;
+}
+
+.modal-close:hover {
+  color: #fff;
+  transform: rotate(90deg);
+}
+
+.modal-title {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 300;
+  letter-spacing: 6px; /* Широкий интервал для лакшери-эффекта */
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0 0 15px 0;
+}
+
+.modal-divider {
+  width: 40px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.5);
+  margin: 0 auto 40px auto;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Элегантные инпуты с эффектом плавающего лейбла */
+.input-group {
+  position: relative;
+  width: 100%;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 10px 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 14px;
+  font-family: inherit;
+  font-weight: 300;
+  outline: none;
+  transition: border-color 0.4s ease;
+  resize: none;
+}
+
+.input-group label {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+/* Анимация лейбла при фокусе или когда поле не пустое */
+.input-group input:focus ~ label,
+.input-group input:valid ~ label,
+.input-group textarea:focus ~ label,
+.input-group textarea:valid ~ label {
+  top: -15px;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  border-bottom: 1px solid #fff;
+}
+
+/* Специфичные стили для поля "Дата" */
+.date-input {
+  color: transparent !important; /* Прячем текст даты, пока не выбрано */
+  color-scheme: dark; /* Делает иконку календаря светлой и стильной */
+}
+
+.date-input:focus,
+.date-input:valid {
+  color: #fff !important;
+}
+
+/* Лейбл для даты должен всегда быть наверху, чтобы иконка не мешала */
+.input-group input[type="date"] ~ .date-label {
+  top: -15px;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.submit-btn {
+  margin-top: 20px;
+  padding: 16px 0;
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: all 0.4s ease;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+}
+
+.submit-btn:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+.modal-status {
+  text-align: center;
+  font-weight: 300;
+  letter-spacing: 1px;
+  font-size: 14px;
+  line-height: 1.6;
+  animation: fadeIn 0.4s ease;
+}
+
+.modal-status.success {
+  color: #fff;
+}
+
+.modal-status.error {
+  color: #ff6b6b;
+  margin-top: -15px;
+  font-size: 12px;
+}
+
+/* Анимации появления */
+@keyframes modalFadeIn {
+  from { opacity: 0; backdrop-filter: blur(0px); }
+  to { opacity: 1; backdrop-filter: blur(15px); }
+}
+
+@keyframes modalSlideUp {
+  from { opacity: 0; transform: translateY(30px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Для мобильных устройств */
+@media (max-width: 500px) {
+  .modal-wrapper {
+    width: 90%;
+    padding: 40px 25px;
+  }
+}
