@@ -171,12 +171,12 @@ html, body, #root {
   border-radius: 50px;
   font-weight: 800;
   letter-spacing: 0.15em;
-  font-size: 0.8rem;
+  font-size: 1.2rem;
   cursor: pointer;
   transition: all 0.3s ease;
   margin-bottom: 25px;
   width: 100%;
-  max-width: 360px;
+  max-width: 420px;
 }
 
 .book-btn:hover {
@@ -187,7 +187,7 @@ html, body, #root {
 .lifestyle-link {
   color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
-  font-size: 0.75rem;
+  font-size: 1rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   transition: color 0.3s;

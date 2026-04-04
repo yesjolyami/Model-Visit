@@ -196,7 +196,7 @@
     transition: all 0.5s ease;
       font-style: italic;
 
-      text-underline-offset: 6px; /* расстояние от текста до линии */
+      text-underline-offset: 2px; /* расстояние от текста до линии */
   text-decoration-thickness: 1px;
   text-decoration-color: #fff;
 }

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { FiX } from 'react-icons/fi';
 import './BookingModal.css'; // Создадим стили на следующем шаге
@@ -15,7 +15,7 @@ const BookingModal = ({ isOpen, onClose, t }) => {
 
     // ЗАМЕНИ эти данные на свои из личного кабинета EmailJS
     const SERVICE_ID = 'service_rj1oz9j';
-    const TEMPLATE_ID = 'template_dlswic4';
+    const TEMPLATE_ID = 'template_gric4y4';
     const PUBLIC_KEY = 'nQkGjJD3JlFOdfJrl';
 
   emailjs
