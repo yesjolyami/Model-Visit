@@ -167,21 +167,42 @@ html, body, #root {
   background: #fff;
   color: #000;
   border: none;
+
   padding: 18px 45px;
-  border-radius: 50px;
+  border-radius: 999px;
   font-weight: 800;
   letter-spacing: 0.15em;
   font-size: 1.2rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin-bottom: 25px;
+
   width: 100%;
   max-width: 420px;
+  margin-bottom: 25px;
+
+  cursor: pointer;
+
+  transform: translateY(0);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+
+  transition:
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.35s ease;
 }
 
 .book-btn:hover {
-  background: #f0f0f0;
-  letter-spacing: 0.2em;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+  background: #fafafa;
+}
+
+.book-btn:active {
+  transform: translateY(0px) scale(0.99);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.10);
+}
+
+.book-btn:focus-visible {
+  outline: 2px solid rgba(0, 0, 0, 0.2);
+  outline-offset: 3px;
 }
 
 .lifestyle-link {

@@ -7,7 +7,7 @@ const translations = {
     name: 'KSENIA NAMITOVA',
     bookShoot: 'BOOK A SHOOT',
     lifestyle: 'ME AND MY LIFESTYLE',
-    developedBy: 'DESIGNED & DEVELOPED BY',
+    developedBy: '*The mentioned resources Instagram, belong to the Meta company, recognized as extremist in the Russian Federation DESIGNED & DEVELOPED BY',
     developerName: 'JOLY',
     langToggleBtn: 'RU',
     modalName: 'Your Name',
@@ -30,7 +30,7 @@ const translations = {
     name: 'КСЕНИЯ НАМИТОВА',
     bookShoot: 'ЗАБРОНИРОВАТЬ СЪЕМКУ',
     lifestyle: 'Я И МОЙ ЛАЙФСТАЙЛ',
-    developedBy: 'ДИЗАЙН И РАЗРАБОТКА —',
+    developedBy: '* Упоминаемые ресурсы Instagram, принадлежат компании Meta, признанной экстремистской на территории Российской Федерации \n ДИЗАЙН И РАЗРАБОТКА —',
     developerName: 'ЖОЛИ',
     langToggleBtn: 'EN',
 
